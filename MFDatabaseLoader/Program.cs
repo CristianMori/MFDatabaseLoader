@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using NPOI.SS.UserModel;
+using MFDatabase;
 
 namespace MFDatabaseLoader
 {
@@ -15,21 +16,15 @@ namespace MFDatabaseLoader
     {
         static void Main(string[] args)
         {
-            DataSet dataSet=new DataSet();
-            MySqlConnectionStringBuilder stringBuilder=new MySqlConnectionStringBuilder();
-            stringBuilder.Server = "localhost";
-            stringBuilder.Port = 3306;
-            stringBuilder.Database = "MeltFinder";
-            stringBuilder.UserID = "root";
-            stringBuilder.Password = "Wargames99!";
-            MySqlConnection connection = new MySqlConnection(stringBuilder.ConnectionString);
-            connection.Open();
-            
-            MySqlDataAdapter Material = new MySqlDataAdapter("SELECT * FROM Materials",connection);
-            Material.TableMappings.Add("Table", "Materials");
-            MySqlCommandBuilder builder = new MySqlCommandBuilder(Material);
-            Material.Fill(dataSet);
-            
+            MFDatabaseFactory dbFactory=new MFDatabaseFactory();
+            dbFactory.Server = "localhost";
+            dbFactory.Port = 3306;
+            dbFactory.Database = "MeltFinder";
+            dbFactory.UserID = "root";
+            dbFactory.Password = "Wargames99!";
+
+            dbFactory.ConnectAndGetData();
+
             FileStream stream = new FileStream("f:\\MeltFinderT.xls",FileMode.Open);
 
             IWorkbook book = WorkbookFactory.Create(stream);
@@ -45,15 +40,12 @@ namespace MFDatabaseLoader
                 data.Add(ii + 5497);
                 for (Int32 ij=0; ij<29; ij++)
                     data.Add(currentRow.GetCell(ij).ToString());
-                dataSet.Tables["Materials"].Rows.Add(data.ToArray());
+                dbFactory.Materials.Rows.Add(data.ToArray());
             }
 
             book.Close();
             stream.Close();
-            Material.Update(dataSet);
-            Material.Dispose();
-            connection.Clone();
-            connection.Dispose();
+            dbFactory.Close();
         }
     }
 }

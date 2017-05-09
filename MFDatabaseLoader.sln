@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MFDatabaseLoader", "MFDatabaseLoader\MFDatabaseLoader.csproj", "{62B66E4A-F286-4725-8E5B-1128E952FA6D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MFDatabaseViewer", "MFDatabaseViewer\MFDatabaseViewer.csproj", "{31C05B83-FF4E-4143-AA4A-2ADA11431BBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MFDatabaseFactory", "MFDatabaseFactory\MFDatabaseFactory.csproj", "{F63DC063-02D6-41D3-A6CF-C2B862BA23CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{62B66E4A-F286-4725-8E5B-1128E952FA6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62B66E4A-F286-4725-8E5B-1128E952FA6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62B66E4A-F286-4725-8E5B-1128E952FA6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31C05B83-FF4E-4143-AA4A-2ADA11431BBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31C05B83-FF4E-4143-AA4A-2ADA11431BBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31C05B83-FF4E-4143-AA4A-2ADA11431BBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31C05B83-FF4E-4143-AA4A-2ADA11431BBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F63DC063-02D6-41D3-A6CF-C2B862BA23CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F63DC063-02D6-41D3-A6CF-C2B862BA23CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F63DC063-02D6-41D3-A6CF-C2B862BA23CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F63DC063-02D6-41D3-A6CF-C2B862BA23CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
